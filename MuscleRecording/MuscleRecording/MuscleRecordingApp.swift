@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct MuscleRecordingApp: App {
     let persistenceController = PersistenceController.shared
-
+    @StateObject var data = RecordingViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RecordingView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(data)
         }
     }
 }

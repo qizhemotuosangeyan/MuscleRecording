@@ -13,6 +13,17 @@
 		EE1B40962C268A2E00B7FF27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1B40952C268A2E00B7FF27 /* Preview Assets.xcassets */; };
 		EE1B40982C268A2E00B7FF27 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40972C268A2E00B7FF27 /* Persistence.swift */; };
 		EE1B409B2C268A2E00B7FF27 /* MuscleRecording.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40992C268A2E00B7FF27 /* MuscleRecording.xcdatamodeld */; };
+		EE1B40A22C26A58A00B7FF27 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40A12C26A58A00B7FF27 /* RecordingView.swift */; };
+		EE1B40A42C26A59200B7FF27 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40A32C26A59200B7FF27 /* PlayView.swift */; };
+		EE1B40A62C26A62900B7FF27 /* EditBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40A52C26A62900B7FF27 /* EditBodyView.swift */; };
+		EE1B40A82C26A63900B7FF27 /* PlayBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40A72C26A63900B7FF27 /* PlayBodyView.swift */; };
+		EE1B40AA2C26A67400B7FF27 /* SetSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40A92C26A67400B7FF27 /* SetSizeView.swift */; };
+		EE1B40AC2C26A68400B7FF27 /* SetReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40AB2C26A68400B7FF27 /* SetReminderView.swift */; };
+		EE1B40AE2C2A885B00B7FF27 /* BodyPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40AD2C2A885B00B7FF27 /* BodyPart.swift */; };
+		EE1B40B02C2AAD2C00B7FF27 /* LineWithAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40AF2C2AAD2C00B7FF27 /* LineWithAnnotation.swift */; };
+		EE1B40B22C2AAD5900B7FF27 /* EditPreviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40B12C2AAD5900B7FF27 /* EditPreviewCellView.swift */; };
+		EE6CA4722C2AAE77009F7B10 /* EditSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4712C2AAE77009F7B10 /* EditSheetView.swift */; };
+		EE6CA4742C2AC3F0009F7B10 /* RecordingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4732C2AC3F0009F7B10 /* RecordingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +34,17 @@
 		EE1B40952C268A2E00B7FF27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE1B40972C268A2E00B7FF27 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EE1B409A2C268A2E00B7FF27 /* MuscleRecording.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MuscleRecording.xcdatamodel; sourceTree = "<group>"; };
+		EE1B40A12C26A58A00B7FF27 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		EE1B40A32C26A59200B7FF27 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		EE1B40A52C26A62900B7FF27 /* EditBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBodyView.swift; sourceTree = "<group>"; };
+		EE1B40A72C26A63900B7FF27 /* PlayBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBodyView.swift; sourceTree = "<group>"; };
+		EE1B40A92C26A67400B7FF27 /* SetSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSizeView.swift; sourceTree = "<group>"; };
+		EE1B40AB2C26A68400B7FF27 /* SetReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderView.swift; sourceTree = "<group>"; };
+		EE1B40AD2C2A885B00B7FF27 /* BodyPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyPart.swift; sourceTree = "<group>"; };
+		EE1B40AF2C2AAD2C00B7FF27 /* LineWithAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineWithAnnotation.swift; sourceTree = "<group>"; };
+		EE1B40B12C2AAD5900B7FF27 /* EditPreviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPreviewCellView.swift; sourceTree = "<group>"; };
+		EE6CA4712C2AAE77009F7B10 /* EditSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSheetView.swift; sourceTree = "<group>"; };
+		EE6CA4732C2AC3F0009F7B10 /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +79,14 @@
 			children = (
 				EE1B408E2C268A2B00B7FF27 /* MuscleRecordingApp.swift */,
 				EE1B40902C268A2B00B7FF27 /* ContentView.swift */,
+				EE6CA4732C2AC3F0009F7B10 /* RecordingViewModel.swift */,
+				EE1B40B32C2AAD9700B7FF27 /* EditModeView */,
+				EE1B40AD2C2A885B00B7FF27 /* BodyPart.swift */,
+				EE1B40A32C26A59200B7FF27 /* PlayView.swift */,
+				EE1B40A52C26A62900B7FF27 /* EditBodyView.swift */,
+				EE1B40A72C26A63900B7FF27 /* PlayBodyView.swift */,
+				EE1B40A92C26A67400B7FF27 /* SetSizeView.swift */,
+				EE1B40AB2C26A68400B7FF27 /* SetReminderView.swift */,
 				EE1B40922C268A2E00B7FF27 /* Assets.xcassets */,
 				EE1B40972C268A2E00B7FF27 /* Persistence.swift */,
 				EE1B40992C268A2E00B7FF27 /* MuscleRecording.xcdatamodeld */,
@@ -71,6 +101,17 @@
 				EE1B40952C268A2E00B7FF27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EE1B40B32C2AAD9700B7FF27 /* EditModeView */ = {
+			isa = PBXGroup;
+			children = (
+				EE1B40A12C26A58A00B7FF27 /* RecordingView.swift */,
+				EE6CA4712C2AAE77009F7B10 /* EditSheetView.swift */,
+				EE1B40B12C2AAD5900B7FF27 /* EditPreviewCellView.swift */,
+				EE1B40AF2C2AAD2C00B7FF27 /* LineWithAnnotation.swift */,
+			);
+			path = EditModeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +184,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1B40A62C26A62900B7FF27 /* EditBodyView.swift in Sources */,
+				EE1B40A42C26A59200B7FF27 /* PlayView.swift in Sources */,
+				EE1B40B02C2AAD2C00B7FF27 /* LineWithAnnotation.swift in Sources */,
 				EE1B40982C268A2E00B7FF27 /* Persistence.swift in Sources */,
+				EE6CA4722C2AAE77009F7B10 /* EditSheetView.swift in Sources */,
+				EE1B40B22C2AAD5900B7FF27 /* EditPreviewCellView.swift in Sources */,
+				EE1B40AE2C2A885B00B7FF27 /* BodyPart.swift in Sources */,
+				EE6CA4742C2AC3F0009F7B10 /* RecordingViewModel.swift in Sources */,
+				EE1B40A22C26A58A00B7FF27 /* RecordingView.swift in Sources */,
+				EE1B40A82C26A63900B7FF27 /* PlayBodyView.swift in Sources */,
+				EE1B40AA2C26A67400B7FF27 /* SetSizeView.swift in Sources */,
 				EE1B40912C268A2B00B7FF27 /* ContentView.swift in Sources */,
+				EE1B40AC2C26A68400B7FF27 /* SetReminderView.swift in Sources */,
 				EE1B409B2C268A2E00B7FF27 /* MuscleRecording.xcdatamodeld in Sources */,
 				EE1B408F2C268A2B00B7FF27 /* MuscleRecordingApp.swift in Sources */,
 			);
