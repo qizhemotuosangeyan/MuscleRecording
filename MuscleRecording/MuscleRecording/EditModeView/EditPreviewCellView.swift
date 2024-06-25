@@ -23,7 +23,7 @@ struct EditPreviewCellView: View {
             VStack(alignment: .leading) {
                 GeometryReader { geometry in
                     VStack(alignment: .leading) {
-                        Text(measurement.subPart).font(.title2)
+                        Text(measurement.part).font(.title2)
                             .alignmentGuide(.top) { _ in geometry.size.height * 0.25 }
                         Spacer()
                         HStack(alignment: .bottom) {

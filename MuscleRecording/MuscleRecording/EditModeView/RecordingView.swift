@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecordingView: View {
     @State var choosingBodyPart: BodyPart = .Arms
+    @State var choosingSubPart: String?
     @EnvironmentObject var data: RecordingViewModel
     var body: some View {
         ScrollView {
@@ -64,6 +65,10 @@ struct RecordingView: View {
                 }
                 .pickerStyle(.segmented)
                 list
+                    .sheet(item: $choosingSubPart) { subPart in
+                        EditSheetView(bodyPart: choosingBodyPart, subPart: subPart, choosingSubPart: $choosingSubPart)
+                            .presentationDetents([.medium])
+                    }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .overlay(alignment: .topLeading) {
@@ -82,45 +87,81 @@ struct RecordingView: View {
         switch choosingBodyPart {
         case .Deltoids:
             ForEach(BodyPart.DeltoidPart.allCases) { deltoid in
-                if let measurement = data.measurements[.Deltoids]?[deltoid.rawValue] {
-                    EditPreviewCellView(measurement: measurement)
-                }
+                EditPreviewCellView(measurement: data.measurements[.Deltoids]![deltoid.rawValue]!)
+                    .contentShape(Rectangle())
+                    .onHapticTapGesture {
+                        choosingSubPart = deltoid.rawValue
+                    }
             }
         case .Chest:
             ForEach(BodyPart.ChestPart.allCases) { chest in
-                if let measurement = data.measurements[.Chest]?[chest.rawValue] {
-                    EditPreviewCellView(measurement: measurement)
-                }
+                EditPreviewCellView(measurement: data.measurements[.Chest]![chest.rawValue]!)
+                    .contentShape(Rectangle())
+                    .onHapticTapGesture {
+                        choosingSubPart = chest.rawValue
+                    }
             }
         case .Arms:
             ForEach(BodyPart.ArmPart.allCases) { arm in
-                if let measurement = data.measurements[.Arms]?[arm.rawValue] {
-                    EditPreviewCellView(measurement: measurement)
-                }
+                EditPreviewCellView(measurement: data.measurements[.Arms]![arm.rawValue]!)
+                    .contentShape(Rectangle())
+                    .onHapticTapGesture {
+                        choosingSubPart = arm.rawValue
+                    }
             }
         case .Core:
             ForEach(BodyPart.CorePart.allCases) { core in
-                if let measurement = data.measurements[.Core]?[core.rawValue] {
-                    EditPreviewCellView(measurement: measurement)
-                }
+                EditPreviewCellView(measurement: data.measurements[.Core]![core.rawValue]!)
+                    .contentShape(Rectangle())
+                    .onHapticTapGesture {
+                        choosingSubPart = core.rawValue
+                    }
             }
         case .Thighs:
             ForEach(BodyPart.ThighsPart.allCases) { thigh in
-                if let measurement = data.measurements[.Thighs]?[thigh.rawValue] {
-                    EditPreviewCellView(measurement: measurement)
-                }
+                EditPreviewCellView(measurement: data.measurements[.Thighs]![thigh.rawValue]!)
+                    .contentShape(Rectangle())
+                    .onHapticTapGesture {
+                        choosingSubPart = thigh.rawValue
+                    }
             }
         case .Calves:
             ForEach(BodyPart.CalfPart.allCases) { calf in
-                if let measurement = data.measurements[.Calves]?[calf.rawValue] {
-                    EditPreviewCellView(measurement: measurement)
-                }
+                EditPreviewCellView(measurement: data.measurements[.Calves]![calf.rawValue]!)
+                    .contentShape(Rectangle())
+                    .onHapticTapGesture {
+                        choosingSubPart = calf.rawValue
+                    }
             }
         }
     }
 }
 
+extension String: Identifiable {
+    public var id: String { self }
+}
 
+struct HapticTapGesture: ViewModifier {
+    let action: () -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .onTapGesture {
+                // 触发震动反馈
+                let generator = UIImpactFeedbackGenerator(style: .medium)
+                generator.impactOccurred()
+
+                // 执行传入的动作
+                action()
+            }
+    }
+}
+
+extension View {
+    func onHapticTapGesture(action: @escaping () -> Void) -> some View {
+        self.modifier(HapticTapGesture(action: action))
+    }
+}
 #Preview {
     RecordingView()
         .environmentObject(RecordingViewModel())

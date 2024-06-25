@@ -77,11 +77,10 @@
 		EE1B408D2C268A2B00B7FF27 /* MuscleRecording */ = {
 			isa = PBXGroup;
 			children = (
+				EE6CA4752C2ADF7B009F7B10 /* Data */,
 				EE1B408E2C268A2B00B7FF27 /* MuscleRecordingApp.swift */,
 				EE1B40902C268A2B00B7FF27 /* ContentView.swift */,
-				EE6CA4732C2AC3F0009F7B10 /* RecordingViewModel.swift */,
 				EE1B40B32C2AAD9700B7FF27 /* EditModeView */,
-				EE1B40AD2C2A885B00B7FF27 /* BodyPart.swift */,
 				EE1B40A32C26A59200B7FF27 /* PlayView.swift */,
 				EE1B40A52C26A62900B7FF27 /* EditBodyView.swift */,
 				EE1B40A72C26A63900B7FF27 /* PlayBodyView.swift */,
@@ -112,6 +111,15 @@
 				EE1B40AF2C2AAD2C00B7FF27 /* LineWithAnnotation.swift */,
 			);
 			path = EditModeView;
+			sourceTree = "<group>";
+		};
+		EE6CA4752C2ADF7B009F7B10 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EE6CA4732C2AC3F0009F7B10 /* RecordingViewModel.swift */,
+				EE1B40AD2C2A885B00B7FF27 /* BodyPart.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

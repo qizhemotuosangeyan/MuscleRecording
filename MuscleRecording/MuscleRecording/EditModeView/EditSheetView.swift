@@ -8,43 +8,65 @@
 import SwiftUI
 
 struct EditSheetView: View {
-    @Binding var measurement: Measurement
+    var bodyPart: BodyPart
+    var subPart: String
+    @State var sliderValue = 0.0
+    @Binding var choosingSubPart: String?
     @EnvironmentObject var data: RecordingViewModel
-
     var descriptionText: String {
-        switch measurement.bodyPart {
-        case .Deltoids:
-            return BodyPart.DeltoidPart(rawValue: measurement.subPart)?.description ?? ""
-        case .Chest:
-            return BodyPart.ChestPart(rawValue: measurement.subPart)?.description ?? ""
-        case .Arms:
-            return BodyPart.ArmPart(rawValue: measurement.subPart)?.description ?? ""
-        case .Core:
-            return BodyPart.CorePart(rawValue: measurement.subPart)?.description ?? ""
-        case .Thighs:
-            return BodyPart.ThighsPart(rawValue: measurement.subPart)?.description ?? ""
-        case .Calves:
-            return BodyPart.CalfPart(rawValue: measurement.subPart)?.description ?? ""
+        switch bodyPart {
+        case BodyPart.Deltoids:
+            return BodyPart.DeltoidPart(rawValue: subPart)!.description
+        case BodyPart.Chest:
+            return BodyPart.ChestPart(rawValue: subPart)!.description
+        case BodyPart.Arms:
+            return BodyPart.ArmPart(rawValue: subPart)!.description
+        case BodyPart.Core:
+            return BodyPart.CorePart(rawValue: subPart)!.description
+        case BodyPart.Thighs:
+            return BodyPart.ThighsPart(rawValue: subPart)!.description
+        case BodyPart.Calves:
+            return BodyPart.CalfPart(rawValue: subPart)!.description
         }
     }
     var body: some View {
         VStack(alignment: .leading) {
-            Text(measurement.bodyPart.title)
-            Rectangle().foregroundStyle(.white).border(.gray).frame(width: .infinity, height: 150)
+            HStack {
+                Text(subPart)
+                Spacer()
+                Text("add")
+                    .foregroundStyle(.blue)
+                    .onHapticTapGesture {
+                        data.measurements[bodyPart]![subPart]!.value = sliderValue
+                        choosingSubPart = nil
+                    }
+            }
+            Rectangle().foregroundStyle(.white).border(.gray).frame(height: 150).frame(maxWidth: .infinity)
             Text(descriptionText)
             HStack(alignment: .bottom) {
                 Spacer()
-                Text(String(format: "%.1f", measurement.value)).font(.title)
+                Text(String(format: "%.1f", sliderValue)).font(.title)
                 Text("cm").font(.subheadline)
                 Spacer()
             }
+            Slider(value: $sliderValue, in: data.measurements[bodyPart]![subPart]!.range, step: 0.1)
+            .onChange(of: sliderValue) {
+                
+            }
         }
-        .padding(.horizontal, 20)
+        .padding(20)
+        .onAppear {
+            sliderValue = data.measurements[bodyPart]![subPart]!.value
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+    func sliderRange(_ initialValue: Double) -> ClosedRange<Double> {
+        return initialValue - 100 ... initialValue + 100
     }
 }
 
 
 #Preview {
-    EditSheetView(measurement: .constant(Measurement(bodyPart: .Arms, subPart: BodyPart.ArmPart.BicepsPeak.rawValue, value: 150)))
+    EditSheetView(bodyPart: BodyPart.Arms, subPart: BodyPart.ArmPart.BicepsPeak.rawValue, choosingSubPart: .constant(BodyPart.ArmPart.BicepsPeak.rawValue))
         .environmentObject(RecordingViewModel())
 }

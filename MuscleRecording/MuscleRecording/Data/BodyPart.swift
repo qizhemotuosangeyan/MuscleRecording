@@ -151,8 +151,8 @@ enum BodyPart: String, CaseIterable, Identifiable {
 }
 
 struct Measurement {
-    let bodyPart: BodyPart
-    let subPart: String
+    let part: String
     var value: Double // 单位cm
+    var range = 10...200.0
 }
 
