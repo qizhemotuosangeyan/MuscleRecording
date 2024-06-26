@@ -60,7 +60,7 @@ struct RecordingView: View {
                 .frame(alignment: .leading)
                 Picker("", selection: $choosingBodyPart) {
                     ForEach(BodyPart.allCases) { bodyPart in
-                        Text(bodyPart.rawValue.capitalized).tag(bodyPart)
+                        Text(bodyPart.title).tag(bodyPart)
                     }
                 }
                 .pickerStyle(.segmented)
@@ -81,13 +81,12 @@ struct RecordingView: View {
                 
             }
         }
-        //        .border(.yellow)
     }
     @ViewBuilder var list: some View {
         switch choosingBodyPart {
         case .Deltoids:
             ForEach(BodyPart.DeltoidPart.allCases) { deltoid in
-                EditPreviewCellView(measurement: data.measurements[.Deltoids]![deltoid.rawValue]!)
+                EditPreviewCellView(bodyPart: .Deltoids, bodySubPart: deltoid.rawValue, measurement: data.measurements[.Deltoids]![deltoid.rawValue]!)
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = deltoid.rawValue
@@ -95,7 +94,7 @@ struct RecordingView: View {
             }
         case .Chest:
             ForEach(BodyPart.ChestPart.allCases) { chest in
-                EditPreviewCellView(measurement: data.measurements[.Chest]![chest.rawValue]!)
+                EditPreviewCellView(bodyPart: .Chest, bodySubPart: chest.rawValue, measurement: data.measurements[.Chest]![chest.rawValue]!)
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = chest.rawValue
@@ -103,7 +102,7 @@ struct RecordingView: View {
             }
         case .Arms:
             ForEach(BodyPart.ArmPart.allCases) { arm in
-                EditPreviewCellView(measurement: data.measurements[.Arms]![arm.rawValue]!)
+                EditPreviewCellView(bodyPart: .Arms, bodySubPart: arm.rawValue, measurement: data.measurements[.Arms]![arm.rawValue]!)
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = arm.rawValue
@@ -111,7 +110,7 @@ struct RecordingView: View {
             }
         case .Core:
             ForEach(BodyPart.CorePart.allCases) { core in
-                EditPreviewCellView(measurement: data.measurements[.Core]![core.rawValue]!)
+                EditPreviewCellView(bodyPart: .Core, bodySubPart: core.rawValue, measurement: data.measurements[.Core]![core.rawValue]!)
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = core.rawValue
@@ -119,7 +118,7 @@ struct RecordingView: View {
             }
         case .Thighs:
             ForEach(BodyPart.ThighsPart.allCases) { thigh in
-                EditPreviewCellView(measurement: data.measurements[.Thighs]![thigh.rawValue]!)
+                EditPreviewCellView(bodyPart: .Thighs, bodySubPart: thigh.rawValue, measurement: data.measurements[.Thighs]![thigh.rawValue]!)
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = thigh.rawValue
@@ -127,7 +126,7 @@ struct RecordingView: View {
             }
         case .Calves:
             ForEach(BodyPart.CalfPart.allCases) { calf in
-                EditPreviewCellView(measurement: data.measurements[.Calves]![calf.rawValue]!)
+                EditPreviewCellView(bodyPart: .Calves, bodySubPart: calf.rawValue, measurement: data.measurements[.Calves]![calf.rawValue]!)
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = calf.rawValue
@@ -165,5 +164,4 @@ extension View {
 #Preview {
     RecordingView()
         .environmentObject(RecordingViewModel())
-    //    EditPreviewCellView(measurement: Measurement(bodyPart: .Arms, subPart: BodyPart.ArmPart.Wrist.rawValue, value: 25))
 }

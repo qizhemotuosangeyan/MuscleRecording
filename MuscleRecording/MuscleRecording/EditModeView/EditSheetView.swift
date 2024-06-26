@@ -32,7 +32,7 @@ struct EditSheetView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(subPart)
+                Text(subPart.bodySubPartTitle(bodyPart: bodyPart))
                 Spacer()
                 Text("add")
                     .foregroundStyle(.blue)

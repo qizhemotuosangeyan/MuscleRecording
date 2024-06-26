@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EditPreviewCellView: View {
+    let bodyPart: BodyPart
+    let bodySubPart: String
     let measurement: Measurement // 尺寸
     var body: some View {
         HStack(alignment: .top) {
@@ -23,7 +25,7 @@ struct EditPreviewCellView: View {
             VStack(alignment: .leading) {
                 GeometryReader { geometry in
                     VStack(alignment: .leading) {
-                        Text(measurement.part).font(.title2)
+                        Text(bodySubPart.bodySubPartTitle(bodyPart: bodyPart)).font(.title2)
                             .alignmentGuide(.top) { _ in geometry.size.height * 0.25 }
                         Spacer()
                         HStack(alignment: .bottom) {

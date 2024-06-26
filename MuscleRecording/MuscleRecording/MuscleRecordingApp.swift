@@ -13,7 +13,7 @@ struct MuscleRecordingApp: App {
     @StateObject var data = RecordingViewModel()
     var body: some Scene {
         WindowGroup {
-            RecordingView()
+            PlayView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(data)
         }

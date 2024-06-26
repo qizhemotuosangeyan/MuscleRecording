@@ -87,20 +87,20 @@ enum BodyPart: String, CaseIterable, Identifiable {
     
     enum CorePart: String, CaseIterable, Identifiable {
         case UpperWaist // 上腰围
-        case MiddleWaist // 中腰围
+//        case MiddleWaist // 中腰围
         case LowerWaist // 下腰围
         var id: Self { self }
         var title: String {
             switch self {
             case .UpperWaist: return NSLocalizedString("上腰围", comment: "")
-            case .MiddleWaist: return NSLocalizedString("中腰围", comment: "")
+//            case .MiddleWaist: return NSLocalizedString("中腰围", comment: "")
             case .LowerWaist: return NSLocalizedString("下腰围", comment: "")
             }
         }
         var description: String {
             switch self {
             case .UpperWaist: return NSLocalizedString("上腰围指的是腰部上方最细处的周长。测量时，请保持自然呼吸状态，不要刻意吸气或呼气。", comment: "")
-            case .MiddleWaist: return NSLocalizedString("中腰围指的是腰部中间最细处的周长。测量时，请保持自然呼吸状态，不要刻意吸气或呼气。", comment: "")
+//            case .MiddleWaist: return NSLocalizedString("中腰围指的是腰部中间最细处的周长。测量时，请保持自然呼吸状态，不要刻意吸气或呼气。", comment: "")
             case .LowerWaist: return NSLocalizedString("下腰围指的是腰部下方最细处的周长。测量时，请保持自然呼吸状态，不要刻意吸气或呼气。", comment: "")
             }
         }
@@ -151,7 +151,6 @@ enum BodyPart: String, CaseIterable, Identifiable {
 }
 
 struct Measurement {
-    let part: String
     var value: Double // 单位cm
     var range = 10...200.0
 }
