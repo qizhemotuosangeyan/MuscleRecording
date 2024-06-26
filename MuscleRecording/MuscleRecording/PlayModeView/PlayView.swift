@@ -28,6 +28,8 @@ struct PlayView: View {
                 
             }
         }
+        .scrollIndicators(.hidden)
+        .padding(20)
     }
 }
 

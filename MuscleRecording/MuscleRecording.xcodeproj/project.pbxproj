@@ -28,6 +28,8 @@
 		EE6CA4812C2BE757009F7B10 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4802C2BE757009F7B10 /* DatePickerView.swift */; };
 		EE6CA4832C2BEBDA009F7B10 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4822C2BEBDA009F7B10 /* Date+String.swift */; };
 		EE6CA4852C2BF561009F7B10 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4842C2BF561009F7B10 /* NotificationManager.swift */; };
+		EE6CA4892C2C0CD2009F7B10 /* AINoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4882C2C0CD2009F7B10 /* AINoteViewModel.swift */; };
+		EE6CA48B2C2C366A009F7B10 /* HunYuanNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA48A2C2C366A009F7B10 /* HunYuanNoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		EE6CA4802C2BE757009F7B10 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		EE6CA4822C2BEBDA009F7B10 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		EE6CA4842C2BF561009F7B10 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		EE6CA4882C2C0CD2009F7B10 /* AINoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AINoteViewModel.swift; sourceTree = "<group>"; };
+		EE6CA48A2C2C366A009F7B10 /* HunYuanNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunYuanNoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,7 @@
 				EE1B40A72C26A63900B7FF27 /* PlayBodyView.swift */,
 				EE6CA47C2C2BD49F009F7B10 /* ReminderView.swift */,
 				EE6CA4802C2BE757009F7B10 /* DatePickerView.swift */,
-				EE6CA47E2C2BD692009F7B10 /* AINoteView.swift */,
+				EE6CA4872C2C0CB8009F7B10 /* AINote */,
 				EE6CA4782C2BAF50009F7B10 /* LineWithPreviewAnnotation.swift */,
 			);
 			path = PlayModeView;
@@ -148,6 +152,16 @@
 				EE6CA4822C2BEBDA009F7B10 /* Date+String.swift */,
 			);
 			path = CodeTool;
+			sourceTree = "<group>";
+		};
+		EE6CA4872C2C0CB8009F7B10 /* AINote */ = {
+			isa = PBXGroup;
+			children = (
+				EE6CA47E2C2BD692009F7B10 /* AINoteView.swift */,
+				EE6CA4882C2C0CD2009F7B10 /* AINoteViewModel.swift */,
+				EE6CA48A2C2C366A009F7B10 /* HunYuanNoteViewModel.swift */,
+			);
+			path = AINote;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,10 +246,12 @@
 				EE1B40A22C26A58A00B7FF27 /* RecordingView.swift in Sources */,
 				EE1B40A82C26A63900B7FF27 /* PlayBodyView.swift in Sources */,
 				EE1B40912C268A2B00B7FF27 /* ContentView.swift in Sources */,
+				EE6CA48B2C2C366A009F7B10 /* HunYuanNoteViewModel.swift in Sources */,
 				EE6CA4812C2BE757009F7B10 /* DatePickerView.swift in Sources */,
 				EE6CA47B2C2BB63B009F7B10 /* String+BodySubPart.swift in Sources */,
 				EE6CA4792C2BAF50009F7B10 /* LineWithPreviewAnnotation.swift in Sources */,
 				EE6CA4852C2BF561009F7B10 /* NotificationManager.swift in Sources */,
+				EE6CA4892C2C0CD2009F7B10 /* AINoteViewModel.swift in Sources */,
 				EE1B409B2C268A2E00B7FF27 /* MuscleRecording.xcdatamodeld in Sources */,
 				EE6CA47D2C2BD49F009F7B10 /* ReminderView.swift in Sources */,
 				EE1B408F2C268A2B00B7FF27 /* MuscleRecordingApp.swift in Sources */,
@@ -297,6 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSNetworkVolumesUsageDescription = "";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "我们需要通知权限来提醒您。";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
@@ -355,6 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSNetworkVolumesUsageDescription = "";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "我们需要通知权限来提醒您。";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;

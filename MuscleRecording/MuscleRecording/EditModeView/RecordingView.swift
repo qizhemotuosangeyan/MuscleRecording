@@ -81,6 +81,8 @@ struct RecordingView: View {
                 
             }
         }
+        .scrollIndicators(.hidden)
+        .padding(20)
     }
     @ViewBuilder var list: some View {
         switch choosingBodyPart {

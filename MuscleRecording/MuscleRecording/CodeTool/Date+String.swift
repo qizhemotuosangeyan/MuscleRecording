@@ -13,4 +13,10 @@ extension Date {
         formatter.dateFormat = "M月d日"
         return formatter.string(from: self)
     }
+    func toYYMMDDServerString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = TimeZone(identifier: "UTC")
+        return formatter.string(from: self)
+    }
 }
