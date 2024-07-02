@@ -117,6 +117,6 @@ struct PlayBodyView: View {
 }
 
 #Preview {
-    PlayView()
+    PlayView(previewMode: .constant(true))
         .environmentObject(RecordingViewModel())
 }

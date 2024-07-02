@@ -44,6 +44,6 @@ struct EditPreviewCellView: View {
     }
 }
 #Preview {
-    RecordingView()
+    RecordingView(previewMode: .constant(false))
         .environmentObject(RecordingViewModel())
 }

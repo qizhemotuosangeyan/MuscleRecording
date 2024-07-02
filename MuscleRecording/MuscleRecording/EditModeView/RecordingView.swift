@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RecordingView: View {
+    @Binding var previewMode: Bool
     @State var choosingBodyPart: BodyPart = .Arms
     @State var choosingSubPart: String?
     @EnvironmentObject var data: RecordingViewModel
@@ -78,6 +79,9 @@ struct RecordingView: View {
                 }
                 .foregroundStyle(.orange)
                 .font(.title3)
+                .onHapticTapGesture {
+                    previewMode = true
+                }
                 
             }
         }
@@ -164,6 +168,6 @@ extension View {
     }
 }
 #Preview {
-    RecordingView()
+    RecordingView(previewMode: .constant(true))
         .environmentObject(RecordingViewModel())
 }

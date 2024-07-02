@@ -9,13 +9,26 @@ import SwiftUI
 
 @main
 struct MuscleRecordingApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
     @StateObject var data = RecordingViewModel()
+    @AppStorage("LetsGo") private var letsGoButtonClicked: Bool = false
+    @AppStorage("ImReady") private var ImReadyButtonClicked: Bool = false
+    @State var previewMode: Bool = false
     var body: some Scene {
         WindowGroup {
-            PlayView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(data)
+            if !letsGoButtonClicked {
+                LetsGoView()
+            }else if !ImReadyButtonClicked {
+                ImReadyView()
+            } else if previewMode{
+                PlayView(previewMode: $previewMode)
+//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environmentObject(data)
+            } else {
+                RecordingView(previewMode: $previewMode)
+//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environmentObject(data)
+            }
         }
     }
 }

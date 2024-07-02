@@ -30,6 +30,10 @@
 		EE6CA4852C2BF561009F7B10 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4842C2BF561009F7B10 /* NotificationManager.swift */; };
 		EE6CA4892C2C0CD2009F7B10 /* AINoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA4882C2C0CD2009F7B10 /* AINoteViewModel.swift */; };
 		EE6CA48B2C2C366A009F7B10 /* HunYuanNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6CA48A2C2C366A009F7B10 /* HunYuanNoteViewModel.swift */; };
+		EE83D1D52C33AA3A004F1F6E /* LetsGoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1D42C33AA3A004F1F6E /* LetsGoView.swift */; };
+		EE83D1D72C33AA42004F1F6E /* ImReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1D62C33AA42004F1F6E /* ImReadyView.swift */; };
+		EE83D1D92C33AF0F004F1F6E /* AppBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1D82C33AF0F004F1F6E /* AppBaseData.swift */; };
+		EE83D1F62C33C6B0004F1F6E /* MRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1F52C33C6B0004F1F6E /* MRButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,10 @@
 		EE6CA4842C2BF561009F7B10 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		EE6CA4882C2C0CD2009F7B10 /* AINoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AINoteViewModel.swift; sourceTree = "<group>"; };
 		EE6CA48A2C2C366A009F7B10 /* HunYuanNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HunYuanNoteViewModel.swift; sourceTree = "<group>"; };
+		EE83D1D42C33AA3A004F1F6E /* LetsGoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsGoView.swift; sourceTree = "<group>"; };
+		EE83D1D62C33AA42004F1F6E /* ImReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImReadyView.swift; sourceTree = "<group>"; };
+		EE83D1D82C33AF0F004F1F6E /* AppBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseData.swift; sourceTree = "<group>"; };
+		EE83D1F52C33C6B0004F1F6E /* MRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 			children = (
 				EE1B408E2C268A2B00B7FF27 /* MuscleRecordingApp.swift */,
 				EE1B40902C268A2B00B7FF27 /* ContentView.swift */,
+				EE83D1F72C33C6C4004F1F6E /* UniversalUI */,
+				EE83D1D32C33AA27004F1F6E /* WelcomView */,
 				EE6CA4862C2C0BC8009F7B10 /* CodeTool */,
 				EE6CA4752C2ADF7B009F7B10 /* Data */,
 				EE1B40B32C2AAD9700B7FF27 /* EditModeView */,
@@ -150,6 +160,7 @@
 			children = (
 				EE6CA47A2C2BB63B009F7B10 /* String+BodySubPart.swift */,
 				EE6CA4822C2BEBDA009F7B10 /* Date+String.swift */,
+				EE83D1D82C33AF0F004F1F6E /* AppBaseData.swift */,
 			);
 			path = CodeTool;
 			sourceTree = "<group>";
@@ -162,6 +173,23 @@
 				EE6CA48A2C2C366A009F7B10 /* HunYuanNoteViewModel.swift */,
 			);
 			path = AINote;
+			sourceTree = "<group>";
+		};
+		EE83D1D32C33AA27004F1F6E /* WelcomView */ = {
+			isa = PBXGroup;
+			children = (
+				EE83D1D42C33AA3A004F1F6E /* LetsGoView.swift */,
+				EE83D1D62C33AA42004F1F6E /* ImReadyView.swift */,
+			);
+			path = WelcomView;
+			sourceTree = "<group>";
+		};
+		EE83D1F72C33C6C4004F1F6E /* UniversalUI */ = {
+			isa = PBXGroup;
+			children = (
+				EE83D1F52C33C6B0004F1F6E /* MRButton.swift */,
+			);
+			path = UniversalUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +266,8 @@
 				EE6CA4832C2BEBDA009F7B10 /* Date+String.swift in Sources */,
 				EE1B40B02C2AAD2C00B7FF27 /* LineWithAnnotation.swift in Sources */,
 				EE1B40982C268A2E00B7FF27 /* Persistence.swift in Sources */,
+				EE83D1F62C33C6B0004F1F6E /* MRButton.swift in Sources */,
+				EE83D1D52C33AA3A004F1F6E /* LetsGoView.swift in Sources */,
 				EE6CA4722C2AAE77009F7B10 /* EditSheetView.swift in Sources */,
 				EE1B40B22C2AAD5900B7FF27 /* EditPreviewCellView.swift in Sources */,
 				EE6CA47F2C2BD692009F7B10 /* AINoteView.swift in Sources */,
@@ -249,7 +279,9 @@
 				EE6CA48B2C2C366A009F7B10 /* HunYuanNoteViewModel.swift in Sources */,
 				EE6CA4812C2BE757009F7B10 /* DatePickerView.swift in Sources */,
 				EE6CA47B2C2BB63B009F7B10 /* String+BodySubPart.swift in Sources */,
+				EE83D1D72C33AA42004F1F6E /* ImReadyView.swift in Sources */,
 				EE6CA4792C2BAF50009F7B10 /* LineWithPreviewAnnotation.swift in Sources */,
+				EE83D1D92C33AF0F004F1F6E /* AppBaseData.swift in Sources */,
 				EE6CA4852C2BF561009F7B10 /* NotificationManager.swift in Sources */,
 				EE6CA4892C2C0CD2009F7B10 /* AINoteViewModel.swift in Sources */,
 				EE1B409B2C268A2E00B7FF27 /* MuscleRecording.xcdatamodeld in Sources */,

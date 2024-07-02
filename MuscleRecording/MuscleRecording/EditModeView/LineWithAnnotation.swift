@@ -46,9 +46,9 @@ struct LineWithAnnotation: View {
                             isPressed = true
                         }
                         // 触觉反馈
-                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     }
                     .onEnded { _ in
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         withAnimation {
                             isPressed = false
                             self.picked = bodyType
@@ -65,6 +65,6 @@ struct LineWithAnnotation: View {
 }
 
 #Preview {
-    RecordingView()
+    RecordingView(previewMode: .constant(false))
         .environmentObject(RecordingViewModel())
 }

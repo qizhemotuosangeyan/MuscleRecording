@@ -24,8 +24,8 @@ class NotificationManager {
     }
     func scheduleNotification(at date: Date, _ completion: @escaping (Bool) -> Void) {
         let content = UNMutableNotificationContent()
-        content.title = "提醒"
-        content.body = "这是您设置的提醒。"
+        content.title = "是时候记录一下现在的肌肉维度啦"
+        content.body = "到了上次您设置的肌肉记录提醒时间啦，带着卷尺进来重新量一下数据吧～"
         content.sound = UNNotificationSound.default
         
         let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)

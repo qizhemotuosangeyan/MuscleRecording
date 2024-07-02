@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlayView: View {
+    @Binding var previewMode: Bool
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -25,6 +26,9 @@ struct PlayView: View {
                 }
                 .foregroundStyle(.orange)
                 .font(.title3)
+                .onHapticTapGesture {
+                    previewMode = false
+                }
                 
             }
         }
@@ -34,7 +38,7 @@ struct PlayView: View {
 }
 
 #Preview {
-    PlayView()
+    PlayView(previewMode: .constant(true))
         .environmentObject(RecordingViewModel())
 
 }
