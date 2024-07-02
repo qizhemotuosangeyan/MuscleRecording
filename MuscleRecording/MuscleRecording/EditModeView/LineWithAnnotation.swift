@@ -65,6 +65,7 @@ struct LineWithAnnotation: View {
 }
 
 #Preview {
-    RecordingView(previewMode: .constant(false))
-        .environmentObject(RecordingViewModel())
+    let context = PersistenceController.shared.container.viewContext
+    return RecordingView(previewMode: .constant(false))
+        .environmentObject(RecordingViewModel(context: context))
 }

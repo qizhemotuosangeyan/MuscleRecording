@@ -3,4 +3,84 @@
    uuid = "CBC75808-7982-401D-86D4-C98699CC9D0A"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AEB3CB2A-2A76-4790-8937-41EAD373A6D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuscleRecording/PlayModeView/ReminderView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E82BBE6-1B4A-4BEC-953B-3180AD99E4B2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuscleRecording/PlayModeView/ReminderView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFC21BC1-999C-42AA-BACF-566869329539"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MuscleRecording/NotificationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "checkNotificationExists(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CFC21BC1-999C-42AA-BACF-566869329539 - c711efbcecd8b416"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in MuscleRecording.NotificationManager.checkNotificationExists(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "MuscleRecording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qianqian/Documents/MuscleRecording/MuscleRecording/MuscleRecording/NotificationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53">
+               </Location>
+               <Location
+                  uuid = "CFC21BC1-999C-42AA-BACF-566869329539 - 1d11bf812b1989c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UNNotificationRequest) -&gt; Swift.Bool in closure #1 (Swift.Array&lt;__C.UNNotificationRequest&gt;) -&gt; () in MuscleRecording.NotificationManager.checkNotificationExists(completion: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "MuscleRecording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qianqian/Documents/MuscleRecording/MuscleRecording/MuscleRecording/NotificationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

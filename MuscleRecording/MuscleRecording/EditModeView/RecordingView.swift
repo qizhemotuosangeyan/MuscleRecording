@@ -92,7 +92,7 @@ struct RecordingView: View {
         switch choosingBodyPart {
         case .Deltoids:
             ForEach(BodyPart.DeltoidPart.allCases) { deltoid in
-                EditPreviewCellView(bodyPart: .Deltoids, bodySubPart: deltoid.rawValue, measurement: data.measurements[.Deltoids]![deltoid.rawValue]!)
+                EditPreviewCellView(bodyPart: .Deltoids, bodySubPart: deltoid.rawValue, measurement: data.measurements[.Deltoids]?[deltoid.rawValue] ?? Measurement(value: 0))
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = deltoid.rawValue
@@ -100,7 +100,7 @@ struct RecordingView: View {
             }
         case .Chest:
             ForEach(BodyPart.ChestPart.allCases) { chest in
-                EditPreviewCellView(bodyPart: .Chest, bodySubPart: chest.rawValue, measurement: data.measurements[.Chest]![chest.rawValue]!)
+                EditPreviewCellView(bodyPart: .Chest, bodySubPart: chest.rawValue, measurement: data.measurements[.Chest]?[chest.rawValue] ?? Measurement(value: 0))
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = chest.rawValue
@@ -108,7 +108,7 @@ struct RecordingView: View {
             }
         case .Arms:
             ForEach(BodyPart.ArmPart.allCases) { arm in
-                EditPreviewCellView(bodyPart: .Arms, bodySubPart: arm.rawValue, measurement: data.measurements[.Arms]![arm.rawValue]!)
+                EditPreviewCellView(bodyPart: .Arms, bodySubPart: arm.rawValue, measurement: data.measurements[.Arms]?[arm.rawValue] ?? Measurement(value: 0))
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = arm.rawValue
@@ -116,7 +116,7 @@ struct RecordingView: View {
             }
         case .Core:
             ForEach(BodyPart.CorePart.allCases) { core in
-                EditPreviewCellView(bodyPart: .Core, bodySubPart: core.rawValue, measurement: data.measurements[.Core]![core.rawValue]!)
+                EditPreviewCellView(bodyPart: .Core, bodySubPart: core.rawValue, measurement: data.measurements[.Core]?[core.rawValue] ?? Measurement(value: 0))
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = core.rawValue
@@ -124,7 +124,7 @@ struct RecordingView: View {
             }
         case .Thighs:
             ForEach(BodyPart.ThighsPart.allCases) { thigh in
-                EditPreviewCellView(bodyPart: .Thighs, bodySubPart: thigh.rawValue, measurement: data.measurements[.Thighs]![thigh.rawValue]!)
+                EditPreviewCellView(bodyPart: .Thighs, bodySubPart: thigh.rawValue, measurement: data.measurements[.Thighs]?[thigh.rawValue] ?? Measurement(value: 0))
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = thigh.rawValue
@@ -132,7 +132,7 @@ struct RecordingView: View {
             }
         case .Calves:
             ForEach(BodyPart.CalfPart.allCases) { calf in
-                EditPreviewCellView(bodyPart: .Calves, bodySubPart: calf.rawValue, measurement: data.measurements[.Calves]![calf.rawValue]!)
+                EditPreviewCellView(bodyPart: .Calves, bodySubPart: calf.rawValue, measurement: data.measurements[.Calves]?[calf.rawValue] ?? Measurement(value: 0))
                     .contentShape(Rectangle())
                     .onHapticTapGesture {
                         choosingSubPart = calf.rawValue
@@ -142,32 +142,12 @@ struct RecordingView: View {
     }
 }
 
+#Preview {
+    let context = PersistenceController.shared.container.viewContext
+    return RecordingView(previewMode: .constant(true))
+        .environmentObject(RecordingViewModel(context: context))
+}
+
 extension String: Identifiable {
     public var id: String { self }
-}
-
-struct HapticTapGesture: ViewModifier {
-    let action: () -> Void
-
-    func body(content: Content) -> some View {
-        content
-            .onTapGesture {
-                // 触发震动反馈
-                let generator = UIImpactFeedbackGenerator(style: .medium)
-                generator.impactOccurred()
-
-                // 执行传入的动作
-                action()
-            }
-    }
-}
-
-extension View {
-    func onHapticTapGesture(action: @escaping () -> Void) -> some View {
-        self.modifier(HapticTapGesture(action: action))
-    }
-}
-#Preview {
-    RecordingView(previewMode: .constant(true))
-        .environmentObject(RecordingViewModel())
 }

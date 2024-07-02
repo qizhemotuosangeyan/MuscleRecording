@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct MuscleRecordingApp: App {
-//    let persistenceController = PersistenceController.shared
-    @StateObject var data = RecordingViewModel()
+    let persistenceController = PersistenceController.shared
+    @StateObject var data: RecordingViewModel
     @AppStorage("LetsGo") private var letsGoButtonClicked: Bool = false
     @AppStorage("ImReady") private var ImReadyButtonClicked: Bool = false
     @State var previewMode: Bool = false
+    init() {
+        let context = PersistenceController.shared.container.viewContext
+        _data = StateObject(wrappedValue: RecordingViewModel(context: context))
+    }
     var body: some Scene {
         WindowGroup {
             if !letsGoButtonClicked {
@@ -22,11 +26,11 @@ struct MuscleRecordingApp: App {
                 ImReadyView()
             } else if previewMode{
                 PlayView(previewMode: $previewMode)
-//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .environmentObject(data)
             } else {
                 RecordingView(previewMode: $previewMode)
-//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .environmentObject(data)
             }
         }

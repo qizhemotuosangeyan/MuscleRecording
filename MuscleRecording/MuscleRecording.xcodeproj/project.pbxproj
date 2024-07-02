@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EE1B408F2C268A2B00B7FF27 /* MuscleRecordingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B408E2C268A2B00B7FF27 /* MuscleRecordingApp.swift */; };
-		EE1B40912C268A2B00B7FF27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40902C268A2B00B7FF27 /* ContentView.swift */; };
 		EE1B40932C268A2E00B7FF27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1B40922C268A2E00B7FF27 /* Assets.xcassets */; };
 		EE1B40962C268A2E00B7FF27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1B40952C268A2E00B7FF27 /* Preview Assets.xcassets */; };
 		EE1B40982C268A2E00B7FF27 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B40972C268A2E00B7FF27 /* Persistence.swift */; };
@@ -34,12 +33,12 @@
 		EE83D1D72C33AA42004F1F6E /* ImReadyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1D62C33AA42004F1F6E /* ImReadyView.swift */; };
 		EE83D1D92C33AF0F004F1F6E /* AppBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1D82C33AF0F004F1F6E /* AppBaseData.swift */; };
 		EE83D1F62C33C6B0004F1F6E /* MRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1F52C33C6B0004F1F6E /* MRButton.swift */; };
+		EE83D1FC2C341217004F1F6E /* View+Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83D1FB2C341217004F1F6E /* View+Haptic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE1B408B2C268A2B00B7FF27 /* MuscleRecording.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleRecording.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1B408E2C268A2B00B7FF27 /* MuscleRecordingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleRecordingApp.swift; sourceTree = "<group>"; };
-		EE1B40902C268A2B00B7FF27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EE1B40922C268A2E00B7FF27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE1B40952C268A2E00B7FF27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EE1B40972C268A2E00B7FF27 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		EE83D1D62C33AA42004F1F6E /* ImReadyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImReadyView.swift; sourceTree = "<group>"; };
 		EE83D1D82C33AF0F004F1F6E /* AppBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBaseData.swift; sourceTree = "<group>"; };
 		EE83D1F52C33C6B0004F1F6E /* MRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRButton.swift; sourceTree = "<group>"; };
+		EE83D1FB2C341217004F1F6E /* View+Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Haptic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				EE1B408E2C268A2B00B7FF27 /* MuscleRecordingApp.swift */,
-				EE1B40902C268A2B00B7FF27 /* ContentView.swift */,
 				EE83D1F72C33C6C4004F1F6E /* UniversalUI */,
 				EE83D1D32C33AA27004F1F6E /* WelcomView */,
 				EE6CA4862C2C0BC8009F7B10 /* CodeTool */,
@@ -107,7 +106,6 @@
 				EE6CA4762C2BAE6F009F7B10 /* PlayModeView */,
 				EE6CA4842C2BF561009F7B10 /* NotificationManager.swift */,
 				EE1B40922C268A2E00B7FF27 /* Assets.xcassets */,
-				EE1B40972C268A2E00B7FF27 /* Persistence.swift */,
 				EE1B40992C268A2E00B7FF27 /* MuscleRecording.xcdatamodeld */,
 				EE1B40942C268A2E00B7FF27 /* Preview Content */,
 			);
@@ -126,8 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				EE1B40A12C26A58A00B7FF27 /* RecordingView.swift */,
-				EE6CA4712C2AAE77009F7B10 /* EditSheetView.swift */,
 				EE1B40B12C2AAD5900B7FF27 /* EditPreviewCellView.swift */,
+				EE6CA4712C2AAE77009F7B10 /* EditSheetView.swift */,
 				EE1B40AF2C2AAD2C00B7FF27 /* LineWithAnnotation.swift */,
 			);
 			path = EditModeView;
@@ -136,6 +134,7 @@
 		EE6CA4752C2ADF7B009F7B10 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				EE1B40972C268A2E00B7FF27 /* Persistence.swift */,
 				EE6CA4732C2AC3F0009F7B10 /* RecordingViewModel.swift */,
 				EE1B40AD2C2A885B00B7FF27 /* BodyPart.swift */,
 			);
@@ -161,6 +160,7 @@
 				EE6CA47A2C2BB63B009F7B10 /* String+BodySubPart.swift */,
 				EE6CA4822C2BEBDA009F7B10 /* Date+String.swift */,
 				EE83D1D82C33AF0F004F1F6E /* AppBaseData.swift */,
+				EE83D1FB2C341217004F1F6E /* View+Haptic.swift */,
 			);
 			path = CodeTool;
 			sourceTree = "<group>";
@@ -266,6 +266,7 @@
 				EE6CA4832C2BEBDA009F7B10 /* Date+String.swift in Sources */,
 				EE1B40B02C2AAD2C00B7FF27 /* LineWithAnnotation.swift in Sources */,
 				EE1B40982C268A2E00B7FF27 /* Persistence.swift in Sources */,
+				EE83D1FC2C341217004F1F6E /* View+Haptic.swift in Sources */,
 				EE83D1F62C33C6B0004F1F6E /* MRButton.swift in Sources */,
 				EE83D1D52C33AA3A004F1F6E /* LetsGoView.swift in Sources */,
 				EE6CA4722C2AAE77009F7B10 /* EditSheetView.swift in Sources */,
@@ -275,7 +276,6 @@
 				EE6CA4742C2AC3F0009F7B10 /* RecordingViewModel.swift in Sources */,
 				EE1B40A22C26A58A00B7FF27 /* RecordingView.swift in Sources */,
 				EE1B40A82C26A63900B7FF27 /* PlayBodyView.swift in Sources */,
-				EE1B40912C268A2B00B7FF27 /* ContentView.swift in Sources */,
 				EE6CA48B2C2C366A009F7B10 /* HunYuanNoteViewModel.swift in Sources */,
 				EE6CA4812C2BE757009F7B10 /* DatePickerView.swift in Sources */,
 				EE6CA47B2C2BB63B009F7B10 /* String+BodySubPart.swift in Sources */,

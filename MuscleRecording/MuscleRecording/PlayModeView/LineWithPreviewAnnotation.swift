@@ -19,7 +19,7 @@ struct LineWithPreviewAnnotation: View {
     let bodyPart: BodyPart
     let subPart: String
     var inflexionPointRatio = 0.4
-    let value: Double
+    let value: Float
     var body: some View {
         // 引线
         Path { path in

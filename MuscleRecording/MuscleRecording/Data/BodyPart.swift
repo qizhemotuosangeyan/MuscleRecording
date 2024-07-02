@@ -151,7 +151,7 @@ enum BodyPart: String, CaseIterable, Identifiable {
 }
 
 struct Measurement {
-    var value: Double // 单位cm
+    var value: Float // 单位cm
     var range = 10...200.0
 }
 

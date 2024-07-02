@@ -38,7 +38,9 @@ struct PlayView: View {
 }
 
 #Preview {
-    PlayView(previewMode: .constant(true))
-        .environmentObject(RecordingViewModel())
+    let context = PersistenceController.shared.container.viewContext
+    return PlayView(previewMode: .constant(true))
+        .environmentObject(RecordingViewModel(context: context))
+        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 
 }

@@ -37,7 +37,7 @@ struct EditSheetView: View {
                 Text("add")
                     .foregroundStyle(.blue)
                     .onHapticTapGesture {
-                        data.measurements[bodyPart]![subPart]!.value = sliderValue
+                        data.saveMeasurement(for: bodyPart, partName: subPart, value: Float(sliderValue))
                         choosingSubPart = nil
                     }
             }
@@ -49,14 +49,14 @@ struct EditSheetView: View {
                 Text("cm").font(.subheadline)
                 Spacer()
             }
-            Slider(value: $sliderValue, in: data.measurements[bodyPart]![subPart]!.range, step: 0.1)
+            Slider(value: $sliderValue, in: data.measurements[bodyPart]?[subPart]?.range ?? 10...200.0, step: 0.1)
             .onChange(of: sliderValue) {
                 
             }
         }
         .padding(20)
         .onAppear {
-            sliderValue = data.measurements[bodyPart]![subPart]!.value
+            sliderValue = Double(data.measurements[bodyPart]?[subPart]?.value ?? 0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
@@ -67,6 +67,7 @@ struct EditSheetView: View {
 
 
 #Preview {
-    EditSheetView(bodyPart: BodyPart.Arms, subPart: BodyPart.ArmPart.BicepsPeak.rawValue, choosingSubPart: .constant(BodyPart.ArmPart.BicepsPeak.rawValue))
-        .environmentObject(RecordingViewModel())
+    let context = PersistenceController.shared.container.viewContext
+    return EditSheetView(bodyPart: BodyPart.Arms, subPart: BodyPart.ArmPart.BicepsPeak.rawValue, choosingSubPart: .constant(BodyPart.ArmPart.BicepsPeak.rawValue))
+        .environmentObject(RecordingViewModel(context: context))
 }

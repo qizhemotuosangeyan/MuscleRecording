@@ -69,6 +69,17 @@ struct ReminderView: View {
         .alert("❌设置失败，请检查权限", isPresented: $nextRemindTimeFaliureAlert) {
             // 设置失败弹窗
         }
+        .onAppear {
+            NotificationManager.shared.requestNotificationPermission { granted in
+                if granted {
+                    NotificationManager.shared.checkNotificationExists { exists in
+                        if exists {
+                            isReminderOn = true
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
