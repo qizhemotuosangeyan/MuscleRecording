@@ -12,13 +12,13 @@ import CryptoKit
 class HunYuanNoteViewModel: ObservableObject {
     @Published var aiText = ""
     private var cancellable: AnyCancellable?
-    let secretId = "AKIDPoFWXj4YzRqSGFObhkibaeq3KVXjyCVo"
-    let secretKey = "Qm6NqHfwDVhl1R7i9oVB123vjht7BEAy"
+    let secretId = "XXXX"
+    let secretKey = "XXXX"
     let service = "hunyuan"
     let host = "hunyuan.tencentcloudapi.com"
     let action = "ChatCompletions"
     let version = "2023-09-01"
-    let algorithm = "TC3-HMAC-SHA256"
+    let algorithm = "XXXX"
     let date = Date().toYYMMDDServerString()
     let ct = "application/json; charset=utf-8"
     let httpRequestMethod = "POST"
